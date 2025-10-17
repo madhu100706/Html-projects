@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing for websites </title>
+    <style>
+        body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin:0;
+padding:0;
+background-color:#f4f4f4;
+        }
+        header{
+            background: #333;
+            color:#fff;
+            padding:15px;
+            text-align:center;
+        }
+        nav{
+            margin:10px;
+            text-align:center;
+        }
+
+        nav a:hover{
+            margin: 0 15px;
+            text-decoration:none;
+            color:#333;
+            font-weight:bold;
+            font-size:18px;
+            font-style: italic;
+            color: chocolate;
+            border: #005fa3;
+            border-radius: 10px;
+        }
+
+        .container{
+            padding:10px 20px;
+            background:#0077cc;
+            color:white;
+            border:none;
+            border-radius;5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+        button:hover{
+            background:#005fa3;
+        }
+
+        footer{
+            background:#333;
+            color:#fff;
+            text-align:center;
+            padding:10px;
+            position:fixed;
+            bottom :0;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>My Practice Websites</h1></header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Hobbies</a>
+    </nav>
+    <div class ="container">
+<h2>Welcome!</h2>
+<p>This is a simple website built with html css and javascript.</p>
+<button onclick="showMessage()">Click Me!</button>
+<p id ="output"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 My Practise Website</p>
+    </footer>
+
+    <script> function showMessage(){
+        document.getElementById("output").innerText ="You Clicked The Button!"
+    }
+    </script>
+</body>
+</html>
