@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Practice-To Do List</title>
+    <style>
+        body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin:0;
+            padding : 0;
+            background:#f0f2f5;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            background:white;
+            padding:25px;
+            border-radius:12px;
+box-shadow:0px 4px 10px
+rgba(0,0,0,0.1);
+width:350px;
+text-align:center;
+        }
+
+        h2{
+            margin-bottom:20px;
+            color:#333;
+        }
+        input{
+            width:70%;
+            padding:8px;
+            border:1px solid #ccc;
+            border-radius:6px;
+        }
+
+        button{
+            padding :9px 14px;
+            margin-left:5px;
+            border:none;
+            border-radius:6px;
+            background:#0077cc;
+            color:white;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#005fa3;
+        }
+
+        ul{
+            list-style:none;
+            padding:0;
+            margin-top:20px;
+            text-align:left;
+        }
+
+        ul li{
+            background: #f9f9f9;
+            padding:10px;
+            margin:6px 0;
+            border-radius:6px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        ul li span{
+            cursor:pointer;
+            color:red;
+            font-weight:bold;
+        }
+
+        ul li span:hover{
+            color:darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Enter a new task....">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        function addTask(){
+            let input = document.getElementById("taskInput");
+            let task = input.value.trim();
+            if (task === ""){
+                alert("Please Enter A Task!");
+                return;
+            }
+            let li = document.createElement("li");
+            li.innerHTML = `${task} <span onclick="removeTask(this)">x</span>`;
+            document.getElementById("taskList").appendChild(li);
+            input.value = "";
+        }
+        function removeTask(element)
+        {
+            element.parentElement.remove();
+        }
+    </script>
+</body>
+</html>
